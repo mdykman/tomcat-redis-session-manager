@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'signing'
+apply plugin: 'eclipse'
 
 group = 'com.orangefunction'
 version = '2.0.0'
@@ -15,7 +16,10 @@ compileJava {
 }
 
 dependencies {
-  compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '7.0.27'
+//  compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '7.0.27'
+  compile group: 'org.apache.tomcat', name: 'tomcat-catalina',version: '8.0.32'
+  
+  
   compile group: 'redis.clients', name: 'jedis', version: '2.5.2'
   compile group: 'org.apache.commons', name: 'commons-pool2', version: '2.2'
   //compile group: 'commons-codec', name: 'commons-codec', version: '1.9'
@@ -48,6 +52,7 @@ signing {
   sign configurations.archives
 }
 
+/*
 uploadArchives {
   repositories {
     mavenDeployer {
@@ -97,3 +102,4 @@ uploadArchives {
     }
   }
 }
+*/
